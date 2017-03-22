@@ -4,5 +4,6 @@
     <EditTextPreference
         android:key="@string/pref_server_host_key"
         android:title="@string/pref_server_host_title"
-        android:summary="@string/pref_server_host_summ"/>
+        android:summary="@string/pref_server_host_summ"
+        android:defaultValue="@string/pref_server_host_default"/>
 </PreferenceScreen>

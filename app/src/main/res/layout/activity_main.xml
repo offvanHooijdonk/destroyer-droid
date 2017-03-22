@@ -5,62 +5,113 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_padding_vertical"
+    android:paddingEnd="@dimen/activity_padding_horizontal"
+    android:paddingStart="@dimen/activity_padding_horizontal"
+    android:paddingTop="@dimen/activity_padding_vertical"
     tools:context="by.vanhooijdonk.destroyerdroid.ui.MainActivity">
 
-    <ImageButton
-        android:id="@+id/btnLeft"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <ImageButton
+                android:id="@+id/btnForward"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_control_height"
+                android:layout_weight="1"
+                android:src="@drawable/ic_keyboard_arrow_up_24"
+                android:tint="@color/colorPrimary"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/btnLeft"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_control_height"
+                android:layout_weight="1"
+                android:src="@drawable/ic_keyboard_arrow_left_24"
+                android:tint="@color/colorPrimary"/>
+
+            <ImageButton
+                android:id="@+id/btnMotorsOn"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_control_height"
+                android:layout_weight="1"
+                android:src="@drawable/ic_play_24"
+                android:tint="#00C853"/>
+
+            <ImageButton
+                android:id="@+id/btnMotorsOff"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_control_height"
+                android:layout_weight="1"
+                android:src="@drawable/ic_stop_24"
+                android:tint="#F44336"
+                android:visibility="gone"/>
+
+            <ImageButton
+                android:id="@+id/btnRight"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_control_height"
+                android:layout_weight="1"
+                android:rotation="180"
+                android:src="@drawable/ic_keyboard_arrow_left_24"
+                android:tint="@color/colorPrimary"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+
+            <ImageButton
+                android:id="@+id/btnBackward"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_control_height"
+                android:layout_weight="1"
+                android:rotation="180"
+                android:src="@drawable/ic_keyboard_arrow_up_24"
+                android:tint="@color/colorPrimary"/>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/btnUp"
-        android:src="@drawable/ic_keyboard_arrow_left_24"
-        android:tint="@color/colorPrimary"/>
-
-    <ImageButton
-        android:id="@+id/btnUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toEndOf="@id/btnLeft"
-        android:src="@drawable/ic_keyboard_arrow_up_24"
-        android:tint="@color/colorPrimary"/>
-
-    <ImageButton
-        android:id="@+id/btnDown"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignStart="@id/btnUp"
-        android:layout_below="@id/btnLeft"
-        android:rotation="180"
-        android:src="@drawable/ic_keyboard_arrow_up_24"
-        android:tint="@color/colorPrimary"/>
-
-    <ImageButton
-        android:id="@+id/btnRight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/btnLeft"
-        android:layout_toEndOf="@id/btnUp"
-        android:rotation="180"
-        android:src="@drawable/ic_keyboard_arrow_left_24"
-        android:tint="@color/colorPrimary"/>
-
-    <ImageButton
-        android:id="@+id/btnGo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/btnLeft"
-        android:layout_alignStart="@id/btnUp"
-        android:src="@drawable/ic_play_24"
-        android:tint="#00C853"/>
-
-    <ImageButton
-        android:id="@+id/btnStop"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/btnLeft"
-        android:layout_alignStart="@id/btnUp"
-        android:src="@drawable/ic_play_24"
-        android:visibility="gone"
-        android:tint="#F44336"/>
-
+        android:textColor="#D50000"
+        android:textSize="16sp"
+        android:maxLines="2"
+        android:ellipsize="end"
+        android:text="Error message"/>
 </RelativeLayout>
